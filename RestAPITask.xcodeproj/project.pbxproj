@@ -10,10 +10,12 @@
 		CA0B7590A28615014AC6F9BD /* Pods_RestAPITask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3150E7B64ADB414D5E7A3D5 /* Pods_RestAPITask.framework */; };
 		D351AD3A29ED4266009AE384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD3929ED4266009AE384 /* AppDelegate.swift */; };
 		D351AD3C29ED4266009AE384 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD3B29ED4266009AE384 /* SceneDelegate.swift */; };
-		D351AD3E29ED4266009AE384 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD3D29ED4266009AE384 /* ViewController.swift */; };
-		D351AD4129ED4266009AE384 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D351AD3F29ED4266009AE384 /* Main.storyboard */; };
 		D351AD4329ED4267009AE384 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D351AD4229ED4267009AE384 /* Assets.xcassets */; };
 		D351AD4629ED4267009AE384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D351AD4429ED4267009AE384 /* LaunchScreen.storyboard */; };
+		D351AD5229ED4D58009AE384 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D351AD5129ED4D58009AE384 /* Localizable.strings */; };
+		D351AD5429ED4E17009AE384 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD5329ED4E17009AE384 /* R.generated.swift */; };
+		D351AD5729ED4EAB009AE384 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD5629ED4EAB009AE384 /* UsersViewController.swift */; };
+		D351AD5929ED4EBD009AE384 /* UsersUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD5829ED4EBD009AE384 /* UsersUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +25,13 @@
 		D351AD3629ED4266009AE384 /* RestAPITask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestAPITask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D351AD3929ED4266009AE384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D351AD3B29ED4266009AE384 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D351AD3D29ED4266009AE384 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D351AD4029ED4266009AE384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D351AD4229ED4267009AE384 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D351AD4529ED4267009AE384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D351AD4729ED4267009AE384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D351AD5129ED4D58009AE384 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		D351AD5329ED4E17009AE384 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		D351AD5629ED4EAB009AE384 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		D351AD5829ED4EBD009AE384 /* UsersUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +52,6 @@
 				41BCA02E08A900AB5910FFD0 /* Pods-RestAPITask.debug.xcconfig */,
 				43D7A247577D25718325EC76 /* Pods-RestAPITask.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +84,41 @@
 		D351AD3829ED4266009AE384 /* RestAPITask */ = {
 			isa = PBXGroup;
 			children = (
-				D351AD3929ED4266009AE384 /* AppDelegate.swift */,
-				D351AD3B29ED4266009AE384 /* SceneDelegate.swift */,
-				D351AD3D29ED4266009AE384 /* ViewController.swift */,
-				D351AD3F29ED4266009AE384 /* Main.storyboard */,
-				D351AD4229ED4267009AE384 /* Assets.xcassets */,
-				D351AD4429ED4267009AE384 /* LaunchScreen.storyboard */,
+				D351AD4D29ED4B1B009AE384 /* Common */,
+				D351AD5529ED4E6E009AE384 /* Users */,
 				D351AD4729ED4267009AE384 /* Info.plist */,
 			);
 			path = RestAPITask;
+			sourceTree = "<group>";
+		};
+		D351AD4D29ED4B1B009AE384 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D351AD3929ED4266009AE384 /* AppDelegate.swift */,
+				D351AD3B29ED4266009AE384 /* SceneDelegate.swift */,
+				D351AD4429ED4267009AE384 /* LaunchScreen.storyboard */,
+				D351AD4E29ED4B28009AE384 /* Resources */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D351AD4E29ED4B28009AE384 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D351AD4229ED4267009AE384 /* Assets.xcassets */,
+				D351AD5129ED4D58009AE384 /* Localizable.strings */,
+				D351AD5329ED4E17009AE384 /* R.generated.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D351AD5529ED4E6E009AE384 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				D351AD5629ED4EAB009AE384 /* UsersViewController.swift */,
+				D351AD5829ED4EBD009AE384 /* UsersUIView.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,6 +129,7 @@
 			buildConfigurationList = D351AD4A29ED4267009AE384 /* Build configuration list for PBXNativeTarget "RestAPITask" */;
 			buildPhases = (
 				6A25A86F5D42F434BF7DD70F /* [CP] Check Pods Manifest.lock */,
+				D351AD5029ED4C16009AE384 /* R.swift script */,
 				D351AD3229ED4266009AE384 /* Sources */,
 				D351AD3329ED4266009AE384 /* Frameworks */,
 				D351AD3429ED4266009AE384 /* Resources */,
@@ -153,8 +183,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D351AD4629ED4267009AE384 /* LaunchScreen.storyboard in Resources */,
+				D351AD5229ED4D58009AE384 /* Localizable.strings in Resources */,
 				D351AD4329ED4267009AE384 /* Assets.xcassets in Resources */,
-				D351AD4129ED4266009AE384 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +230,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D351AD5029ED4C16009AE384 /* R.swift script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "R.swift script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/RestAPITask/Common/Resources/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/RestAPITask/Common/Resources/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -207,23 +257,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D351AD3E29ED4266009AE384 /* ViewController.swift in Sources */,
 				D351AD3A29ED4266009AE384 /* AppDelegate.swift in Sources */,
+				D351AD5729ED4EAB009AE384 /* UsersViewController.swift in Sources */,
+				D351AD5929ED4EBD009AE384 /* UsersUIView.swift in Sources */,
 				D351AD3C29ED4266009AE384 /* SceneDelegate.swift in Sources */,
+				D351AD5429ED4E17009AE384 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D351AD3F29ED4266009AE384 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D351AD4029ED4266009AE384 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D351AD4429ED4267009AE384 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,7 +406,6 @@
 				INFOPLIST_FILE = RestAPITask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -392,7 +435,6 @@
 				INFOPLIST_FILE = RestAPITask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

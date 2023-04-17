@@ -6,6 +6,7 @@ target 'RestAPITask' do
   use_frameworks!
   pod 'Alamofire'
   pod 'SnapKit', '~> 5.0.0'
+  pod 'R.swift'
 
   # Pods for RestAPITask
 
