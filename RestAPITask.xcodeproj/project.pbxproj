@@ -16,13 +16,13 @@
 		D351AD5729ED4EAB009AE384 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD5629ED4EAB009AE384 /* UsersViewController.swift */; };
 		D351AD5929ED4EBD009AE384 /* UsersUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD5829ED4EBD009AE384 /* UsersUIView.swift */; };
 		D351AD5B29ED574D009AE384 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD5A29ED574D009AE384 /* APIManager.swift */; };
-		D351AD5D29ED5797009AE384 /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD5C29ED5797009AE384 /* UsersModel.swift */; };
 		D351AD5F29ED5997009AE384 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD5E29ED5997009AE384 /* CustomError.swift */; };
 		D351AD6229ED5EC9009AE384 /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD6129ED5EC9009AE384 /* UsersService.swift */; };
 		D351AD6629ED623A009AE384 /* FetchUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD6529ED623A009AE384 /* FetchUsers.swift */; };
 		D351AD6829ED6335009AE384 /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD6729ED6335009AE384 /* UsersPresenter.swift */; };
 		D351AD6A29ED64F1009AE384 /* UsersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD6929ED64F1009AE384 /* UsersAssembly.swift */; };
 		D351AD6D29ED6889009AE384 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD6C29ED6889009AE384 /* UsersTableViewCell.swift */; };
+		D3CC5A4929ED770900C83A95 /* ViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC5A4829ED770900C83A95 /* ViewData.swift */; };
 		E3B1829B6F3690E6660C87FA /* Pods_RestAPITask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CDE00201F1B899853D485F5 /* Pods_RestAPITask.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,13 +40,13 @@
 		D351AD5629ED4EAB009AE384 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		D351AD5829ED4EBD009AE384 /* UsersUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUIView.swift; sourceTree = "<group>"; };
 		D351AD5A29ED574D009AE384 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		D351AD5C29ED5797009AE384 /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 		D351AD5E29ED5997009AE384 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		D351AD6129ED5EC9009AE384 /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		D351AD6529ED623A009AE384 /* FetchUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUsers.swift; sourceTree = "<group>"; };
 		D351AD6729ED6335009AE384 /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		D351AD6929ED64F1009AE384 /* UsersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersAssembly.swift; sourceTree = "<group>"; };
 		D351AD6C29ED6889009AE384 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
+		D3CC5A4829ED770900C83A95 /* ViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewData.swift; sourceTree = "<group>"; };
 		D76FBF7B91B996385C417D36 /* Pods-RestAPITask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestAPITask.release.xcconfig"; path = "Target Support Files/Pods-RestAPITask/Pods-RestAPITask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				D351AD6529ED623A009AE384 /* FetchUsers.swift */,
+				D3CC5A4829ED770900C83A95 /* ViewData.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -163,7 +164,6 @@
 		D351AD6429ED5F25009AE384 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D351AD5C29ED5797009AE384 /* UsersModel.swift */,
 				D351AD6129ED5EC9009AE384 /* UsersService.swift */,
 			);
 			path = Services;
@@ -300,7 +300,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/RestAPITask/Common/Resources/R.generated.swift",
+				$SRCROOT/RestAPITask/Common/Resources/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -313,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3CC5A4929ED770900C83A95 /* ViewData.swift in Sources */,
 				D351AD5B29ED574D009AE384 /* APIManager.swift in Sources */,
 				D351AD5F29ED5997009AE384 /* CustomError.swift in Sources */,
 				D351AD6829ED6335009AE384 /* UsersPresenter.swift in Sources */,
@@ -325,7 +326,6 @@
 				D351AD3C29ED4266009AE384 /* SceneDelegate.swift in Sources */,
 				D351AD6629ED623A009AE384 /* FetchUsers.swift in Sources */,
 				D351AD5429ED4E17009AE384 /* R.generated.swift in Sources */,
-				D351AD5D29ED5797009AE384 /* UsersModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
