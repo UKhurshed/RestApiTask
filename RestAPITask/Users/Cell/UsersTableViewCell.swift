@@ -79,7 +79,7 @@ class UsersTableViewCell: UITableViewCell {
     }
     
     public func setupData(data: ResultOfUsers) {
-        image.sd_setImage(with: URL(string: data.picture.medium), placeholderImage: UIImage(systemName: "person.crop.circle.fill"))
+        image.sd_setImage(with: URL(string: data.picture.large), placeholderImage: UIImage(systemName: "person.crop.circle.fill"))
         fio.text = "\(data.name.first) \(data.name.last)"
         birthDate.text = data.name.birthDate
         switch(data.gender) {

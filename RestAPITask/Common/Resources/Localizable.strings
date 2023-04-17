@@ -19,3 +19,11 @@
 "titleErrorLabel" = "An error has occurred";
 "alertDismiss" = "Cancel";
 "tryAgain" = "Try again";
+
+"gender" = "Gender";
+"birthDate" = "Date of birth";
+"email" = "Email";
+"phone" = "Phone";
+"country" = "Country";
+"state" = "State";
+"city" = "City";

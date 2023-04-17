@@ -41,7 +41,8 @@ class UsersViewController: UIViewController {
 
 extension UsersViewController: UsersUIViewDelegate {
     func cellTapped(user: ResultOfUsers) {
-        
+        let vc = UserDetailViewController(user: user)
+        self.navigationController?.customPush(vc, animated: true)
     }
 }
 
