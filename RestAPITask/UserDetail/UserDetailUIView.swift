@@ -24,7 +24,6 @@ class UserDetailUIView: UIView {
     private let stateValue = UILabel()
     private let cityTitle = UILabel()
     private let cityValue = UILabel()
-//    private let
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -231,6 +230,7 @@ class UserDetailUIView: UIView {
     
     public func setupData(data: ResultOfUsers) {
         image.sd_setImage(with: URL(string: data.picture.large), placeholderImage: UIImage(systemName: "person.crop.circle.fill"))
+        
         switch(data.gender) {
         case .female:
             genderImage.image = UIImage(named: "female")

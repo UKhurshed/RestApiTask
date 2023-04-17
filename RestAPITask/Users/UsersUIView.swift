@@ -74,7 +74,6 @@ class UsersUIView: UIView {
         self.result.removeAll()
         usersTableView.reloadData()
     }
-
 }
 
 extension UsersUIView: UITableViewDataSource {

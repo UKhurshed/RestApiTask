@@ -38,9 +38,7 @@ class UsersViewController: UIViewController {
             self.usersUIView.clearResult()
             self.presenterInput.fetchPartOfUsers(page: 1)
         }
-        
     }
-
 }
 
 extension UsersViewController: UsersUIViewDelegate {
@@ -87,6 +85,4 @@ extension UsersViewController: DisplayLogic {
             self.present(alert, animated: true)
         }
     }
-    
-    
 }
