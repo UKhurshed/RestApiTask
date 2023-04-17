@@ -8,11 +8,11 @@
 import Foundation
 
 protocol FetcthUsers: AnyObject {
-    func fetchPartsOfUsers() async throws -> ViewData
+    func fetchPartsOfUsers(page: Int) async throws -> ViewData
 }
 
 protocol UsersService {
-    func fetchUsers() async throws -> ViewData
+    func fetchUsers(page: Int) async throws -> ViewData
 }
 
 
@@ -23,8 +23,8 @@ class FetcthUsersImpl: FetcthUsers {
     init(service: UsersService) {
         self.service = service
     }
-    func fetchPartsOfUsers() async throws -> ViewData {
-        let serviceResult = try await service.fetchUsers()
+    func fetchPartsOfUsers(page: Int) async throws -> ViewData {
+        let serviceResult = try await service.fetchUsers(page: page)
         return serviceResult
     }
 }

@@ -11,6 +11,7 @@ import JGProgressHUD
 
 protocol UsersUIViewDelegate: AnyObject {
     func cellTapped(user: ResultOfUsers)
+    func paginate(currentPage: Int)
 }
 
 class UsersUIView: UIView {
@@ -19,6 +20,8 @@ class UsersUIView: UIView {
     private let spinner = JGProgressHUD(style: .dark)
     
     private var result = [ResultOfUsers]()
+    
+    private var currentPage = 1
     
     weak var delegate: UsersUIViewDelegate?
 
@@ -49,23 +52,27 @@ class UsersUIView: UIView {
     }
     
     public func setupData(result: ViewData) {
-        self.result = result.result
+        self.result.append(contentsOf: result.result)
+        self.currentPage = result.info.page
         usersTableView.reloadData()
     }
     
     public func showLoader() {
         spinner.show(in: self)
-        self.usersTableView.isHidden = true
     }
     
     public func hideLoader() {
         spinner.dismiss(animated: true)
-        self.usersTableView.isHidden = false
     }
     
     public func showError() {
         spinner.dismiss(animated: true)
         self.usersTableView.isHidden = true
+    }
+    
+    public func clearResult() {
+        self.result.removeAll()
+        usersTableView.reloadData()
     }
 
 }
@@ -90,5 +97,12 @@ extension UsersUIView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         delegate?.cellTapped(user: self.result[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == self.result.count - 1 {
+            print("paginated page: \(self.currentPage)")
+            delegate?.paginate(currentPage: self.currentPage + 1)
+        }
     }
 }

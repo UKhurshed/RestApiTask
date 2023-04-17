@@ -8,7 +8,7 @@
 import Foundation
 
 protocol UsersViewInput: AnyObject {
-    func fetchPartOfUsers()
+    func fetchPartOfUsers(page: Int)
 }
 
 protocol DisplayLogic: AnyObject {
@@ -23,11 +23,11 @@ class UsersPresenter: UsersViewInput {
     weak var viewController: DisplayLogic?
     var fetchUsers: FetcthUsers!
     
-    func fetchPartOfUsers() {
+    func fetchPartOfUsers(page: Int) {
         Task {
             do {
                 viewController?.showLoader()
-                let interactorResult = try await fetchUsers.fetchPartsOfUsers()
+                let interactorResult = try await fetchUsers.fetchPartsOfUsers(page: page)
                 viewController?.hideLoader()
                 viewController?.showWeather(viewData: interactorResult)
             } catch {

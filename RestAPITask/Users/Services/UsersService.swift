@@ -11,9 +11,9 @@ import SwiftyJSON
 
 class UsersServiceImpl: UsersService {
     
-    func fetchUsers() async throws -> ViewData {
+    func fetchUsers(page: Int) async throws -> ViewData {
 
-        let api = APIManager(path: "api/?page=1&results=10&seed=abc", httpMethod: .get)
+        let api = APIManager(path: "api/?page=\(page)&results=10&seed=abc", httpMethod: .get)
             
         let data: Data = try await api.callAPI()
         

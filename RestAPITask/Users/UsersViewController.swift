@@ -26,7 +26,7 @@ class UsersViewController: UIViewController {
         usersUIView.delegate = self
         
         navBarConfigure()
-        presenterInput.fetchPartOfUsers()
+        presenterInput.fetchPartOfUsers(page: 1)
     }
     
     private func navBarConfigure() {
@@ -34,7 +34,11 @@ class UsersViewController: UIViewController {
     }
     
     @objc private func refresh() {
-        presenterInput.fetchPartOfUsers()
+        DispatchQueue.main.async {
+            self.usersUIView.clearResult()
+            self.presenterInput.fetchPartOfUsers(page: 1)
+        }
+        
     }
 
 }
@@ -43,6 +47,10 @@ extension UsersViewController: UsersUIViewDelegate {
     func cellTapped(user: ResultOfUsers) {
         let vc = UserDetailViewController(user: user)
         self.navigationController?.customPush(vc, animated: true)
+    }
+    
+    func paginate(currentPage: Int) {
+        presenterInput.fetchPartOfUsers(page: currentPage)
     }
 }
 
@@ -55,12 +63,14 @@ extension UsersViewController: DisplayLogic {
     
     func showLoader() {
         DispatchQueue.main.async {
+            self.view.isUserInteractionEnabled = false
             self.usersUIView.showLoader()
         }
     }
     
     func hideLoader() {
         DispatchQueue.main.async {
+            self.view.isUserInteractionEnabled = true
             self.usersUIView.hideLoader()
         }
     }
@@ -72,7 +82,7 @@ extension UsersViewController: DisplayLogic {
             let alert  = UIAlertController(title: R.string.localizable.titleErrorLabel(), message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: R.string.localizable.alertDismiss(), style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: R.string.localizable.tryAgain(), style: .default, handler: { [weak self] action in
-                self?.presenterInput.fetchPartOfUsers()
+                self?.presenterInput.fetchPartOfUsers(page: 1)
             }))
             self.present(alert, animated: true)
         }
