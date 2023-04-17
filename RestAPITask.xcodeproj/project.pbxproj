@@ -102,7 +102,6 @@
 			children = (
 				D351AD4D29ED4B1B009AE384 /* Common */,
 				D351AD5529ED4E6E009AE384 /* Users */,
-				D351AD4729ED4267009AE384 /* Info.plist */,
 			);
 			path = RestAPITask;
 			sourceTree = "<group>";
@@ -113,6 +112,7 @@
 				D351AD3929ED4266009AE384 /* AppDelegate.swift */,
 				D351AD3B29ED4266009AE384 /* SceneDelegate.swift */,
 				D351AD4429ED4267009AE384 /* LaunchScreen.storyboard */,
+				D351AD4729ED4267009AE384 /* Info.plist */,
 				D351AD6029ED59A1009AE384 /* Network */,
 				D351AD4E29ED4B28009AE384 /* Resources */,
 			);
