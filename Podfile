@@ -18,6 +18,8 @@ target 'RestAPITask' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'R.swift'
   pod 'SwiftyJSON'
+  pod 'SDWebImage', '~> 5.0'
+  pod 'JGProgressHUD'
 
   # Pods for RestAPITask
 

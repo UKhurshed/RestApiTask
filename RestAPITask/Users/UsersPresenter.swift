@@ -12,7 +12,7 @@ protocol UsersViewInput: AnyObject {
 }
 
 protocol DisplayLogic: AnyObject {
-    func showWeather(users: ViewData)
+    func showWeather(viewData: ViewData)
     func showLoader()
     func hideLoader()
     func presentAlertError(message: String)
@@ -29,7 +29,7 @@ class UsersPresenter: UsersViewInput {
                 viewController?.showLoader()
                 let interactorResult = try await fetchUsers.fetchPartsOfUsers()
                 viewController?.hideLoader()
-                viewController?.showWeather(users: interactorResult)
+                viewController?.showWeather(viewData: interactorResult)
             } catch {
                 viewController?.presentAlertError(message: error.localizedDescription)
             }

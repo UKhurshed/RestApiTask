@@ -21,14 +21,35 @@ class UsersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Random Users API"
+        
+        usersUIView.delegate = self
+        
+        navBarConfigure()
+        presenterInput.fetchPartOfUsers()
+    }
+    
+    private func navBarConfigure() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .done, target: self, action: #selector(refresh))
+    }
+    
+    @objc private func refresh() {
         presenterInput.fetchPartOfUsers()
     }
 
 }
 
+extension UsersViewController: UsersUIViewDelegate {
+    func cellTapped(user: ResultOfUsers) {
+        
+    }
+}
+
 extension UsersViewController: DisplayLogic {
-    func showWeather(users: ViewData) {
-        print("result: \(users)")
+    func showWeather(viewData: ViewData) {
+        DispatchQueue.main.async {
+            self.usersUIView.setupData(result: viewData)
+        }
     }
     
     func showLoader() {

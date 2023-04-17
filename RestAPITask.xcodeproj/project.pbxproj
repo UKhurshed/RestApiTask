@@ -23,6 +23,7 @@
 		D351AD6A29ED64F1009AE384 /* UsersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD6929ED64F1009AE384 /* UsersAssembly.swift */; };
 		D351AD6D29ED6889009AE384 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AD6C29ED6889009AE384 /* UsersTableViewCell.swift */; };
 		D3CC5A4929ED770900C83A95 /* ViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC5A4829ED770900C83A95 /* ViewData.swift */; };
+		D3CC5A4C29ED813100C83A95 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CC5A4B29ED813100C83A95 /* Extensions.swift */; };
 		E3B1829B6F3690E6660C87FA /* Pods_RestAPITask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CDE00201F1B899853D485F5 /* Pods_RestAPITask.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		D351AD6929ED64F1009AE384 /* UsersAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersAssembly.swift; sourceTree = "<group>"; };
 		D351AD6C29ED6889009AE384 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		D3CC5A4829ED770900C83A95 /* ViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewData.swift; sourceTree = "<group>"; };
+		D3CC5A4B29ED813100C83A95 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D76FBF7B91B996385C417D36 /* Pods-RestAPITask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RestAPITask.release.xcconfig"; path = "Target Support Files/Pods-RestAPITask/Pods-RestAPITask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 				D351AD3B29ED4266009AE384 /* SceneDelegate.swift */,
 				D351AD4429ED4267009AE384 /* LaunchScreen.storyboard */,
 				D351AD4729ED4267009AE384 /* Info.plist */,
+				D3CC5A4A29ED811000C83A95 /* Utils */,
 				D351AD6029ED59A1009AE384 /* Network */,
 				D351AD4E29ED4B28009AE384 /* Resources */,
 			);
@@ -175,6 +178,14 @@
 				D351AD6C29ED6889009AE384 /* UsersTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D3CC5A4A29ED811000C83A95 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D3CC5A4B29ED813100C83A95 /* Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +337,7 @@
 				D351AD3C29ED4266009AE384 /* SceneDelegate.swift in Sources */,
 				D351AD6629ED623A009AE384 /* FetchUsers.swift in Sources */,
 				D351AD5429ED4E17009AE384 /* R.generated.swift in Sources */,
+				D3CC5A4C29ED813100C83A95 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,7 +479,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 95X368593A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RestAPITask/Info.plist;
+				INFOPLIST_FILE = RestAPITask/Common/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -496,7 +508,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 95X368593A;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RestAPITask/Info.plist;
+				INFOPLIST_FILE = RestAPITask/Common/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

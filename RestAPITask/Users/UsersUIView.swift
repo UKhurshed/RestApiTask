@@ -7,20 +7,26 @@
 
 import UIKit
 import SnapKit
+import JGProgressHUD
+
+protocol UsersUIViewDelegate: AnyObject {
+    func cellTapped(user: ResultOfUsers)
+}
 
 class UsersUIView: UIView {
     
     private let usersTableView = UITableView()
-    private let indicator = UIActivityIndicatorView()
+    private let spinner = JGProgressHUD(style: .dark)
     
-    private var result = [UsersResult]()
+    private var result = [ResultOfUsers]()
+    
+    weak var delegate: UsersUIViewDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
         
         initTableView()
-        initActivityIndicator()
     }
     
     private func initTableView() {
@@ -38,34 +44,27 @@ class UsersUIView: UIView {
         }
     }
     
-    private func initActivityIndicator() {
-        addSubview(indicator)
-        indicator.translatesAutoresizingMaskIntoConstraints = false
-        indicator.tintColor = .black
-        indicator.stopAnimating()
-        indicator.center = center
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func setupData(result: [UsersResult]) {
-        self.result = result
+    public func setupData(result: ViewData) {
+        self.result = result.result
+        usersTableView.reloadData()
     }
     
     public func showLoader() {
-        self.indicator.startAnimating()
+        spinner.show(in: self)
         self.usersTableView.isHidden = true
     }
     
     public func hideLoader() {
-        self.indicator.stopAnimating()
+        spinner.dismiss(animated: true)
         self.usersTableView.isHidden = false
     }
     
     public func showError() {
-        self.indicator.stopAnimating()
+        spinner.dismiss(animated: true)
         self.usersTableView.isHidden = true
     }
 
@@ -78,10 +77,18 @@ extension UsersUIView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UsersTableViewCell.identifier, for: indexPath) as! UsersTableViewCell
+        cell.setupData(data: self.result[indexPath.row])
         return cell
     }
 }
 
 extension UsersUIView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        90
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        delegate?.cellTapped(user: self.result[indexPath.row])
+    }
 }

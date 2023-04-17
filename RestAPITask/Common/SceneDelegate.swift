@@ -20,8 +20,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let vc = UINavigationController(rootViewController: UsersAssembly.configureModule())
-        window.rootViewController = vc
+        let vc = UsersAssembly.configureModule()
+        vc.navigationItem.backButtonTitle = ""
+        let nav = UINavigationController(rootViewController: vc)
+        let textColor: UIColor = .white
+        nav.navigationBar.tintColor = textColor
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: textColor]
+        navBarAppearance.titleTextAttributes = [.foregroundColor:  textColor]
+        navBarAppearance.backgroundColor = UIColor.getColorByHex(rgbHexValue: 0xFF93d500)
+        navBarAppearance.shadowColor = .clear
+        nav.navigationBar.standardAppearance = navBarAppearance
+        nav.navigationBar.compactAppearance = navBarAppearance
+        nav.navigationBar.scrollEdgeAppearance = navBarAppearance
+        
+        window.rootViewController = nav
         window.makeKeyAndVisible()
         self.window = window
     }

@@ -9,12 +9,12 @@ import Foundation
 
 struct ViewData {
     let result: [ResultOfUsers]
-    let info: UserInfo
+    let info: Info
 }
 
 struct ResultOfUsers {
-    let gender: String
-    let name: UserName
+    let gender: Gender
+    let name: UserInfo
     let location: UserLocation
     let email: String
     let phone: String
@@ -22,10 +22,17 @@ struct ResultOfUsers {
     let picture: UserPicture
 }
 
-struct UserName {
+enum Gender: String {
+    case male
+    case female
+}
+
+struct UserInfo {
     let title: String
     let first: String
     let last: String
+    let birthDate: String
+    let age: Int
 }
 
 struct UserLocation {
@@ -44,7 +51,7 @@ struct UserPicture {
     let thumbnail: String
 }
 
-struct UserInfo {
+struct Info {
     let seed: String
     let results: Int
     let page: Int

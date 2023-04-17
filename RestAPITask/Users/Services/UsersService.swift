@@ -27,7 +27,7 @@ class UsersServiceImpl: UsersService {
         if data.isEmpty {
             throw NSError(domain: "UserServiceError", code: -2, userInfo: [NSLocalizedDescriptionKey: "JSON decode error"])
         } else {
-            let userInfo = UserInfo(
+            let userInfo = Info(
                 seed: data["info"]["seed"].stringValue,
                 results: data["info"]["results"].intValue,
                 page: data["info"]["page"].intValue,
@@ -35,10 +35,13 @@ class UsersServiceImpl: UsersService {
             
             var resultOfUsers = [ResultOfUsers]()
             for item in data["results"].arrayValue {
-                let userName = UserName(
+                let formattedBirthDate = item["dob"]["date"].stringValue.formattedDateFromString()
+                let userName = UserInfo(
                     title: item["name"]["title"].stringValue,
                     first: item["name"]["first"].stringValue,
-                    last: item["name"]["last"].stringValue)
+                    last: item["name"]["last"].stringValue,
+                    birthDate: formattedBirthDate ?? "",
+                    age: item["dob"]["age"].intValue)
                 
                 let userLocation = UserLocation(
                     streetNumber: item["location"]["street"]["number"].intValue,
@@ -55,7 +58,7 @@ class UsersServiceImpl: UsersService {
                     thumbnail: item["picture"]["thumbnail"].stringValue)
                 
                 let result = ResultOfUsers(
-                    gender: item["gender"].stringValue,
+                    gender: mappingOfGender(gender: item["gender"].stringValue),
                     name: userName,
                     location: userLocation,
                     email: item["email"].stringValue,
@@ -66,6 +69,14 @@ class UsersServiceImpl: UsersService {
                 resultOfUsers.append(result)
             }
             return ViewData(result: resultOfUsers, info: userInfo)
+        }
+    }
+    
+    private func mappingOfGender(gender: String) -> Gender{
+        if gender.contains("female") {
+            return .female
+        } else {
+            return .male
         }
     }
 }
